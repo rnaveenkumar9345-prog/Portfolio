@@ -1,234 +1,222 @@
 import React from 'react';
 import { PERSONAL_INFO, CORE_KPIS } from '../data/portfolioData';
-import { 
-  FileText, 
-  MapPin, 
-  Mail, 
-  Phone, 
+import {
+  FileText,
+  MapPin,
+  Mail,
+  Phone,
   ArrowRight,
-  TrendingUp,
   Database,
-  BarChart2,
   CheckCircle2,
-  Sparkles
+  Sparkles,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
-      {/* Background Soft Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[350px] h-[300px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none -z-10" />
+    <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden bg-obsidian-950 bg-grid-supreme">
+      {/* Supreme ambient radial glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[360px] bg-brand-500/12 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-ice-400/8 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Top Badges & Availability */}
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-inner">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Status badges */}
+        <div className="flex flex-wrap items-center gap-3 mb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>{PERSONAL_INFO.status}</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-slate-300 glass-pill">
-            <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 supreme-pill">
+            <MapPin className="w-3.5 h-3.5 text-brand-400" />
             <span>{PERSONAL_INFO.location}</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-slate-300 glass-pill">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Campus Placement & Fresher Ready</span>
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono text-brand-300 bg-brand-500/10 border border-brand-500/20">
+            <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+            <span>SQL • Python • Power BI • Tableau</span>
           </div>
         </div>
 
-        {/* Main Hero Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-8 space-y-6">
+        {/* Main content grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          {/* Left: Headline area */}
+          <div className="lg:col-span-7 space-y-6">
             <div>
-              <p className="text-sm font-mono text-cyan-400 font-medium tracking-wider uppercase mb-2">
-                // Executive Analytics Portfolio
+              <p className="text-xs font-mono text-brand-400 tracking-widest uppercase mb-3 font-semibold flex items-center gap-2">
+                <span className="w-6 h-px bg-brand-500" />
+                Data Analyst Portfolio
               </p>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
-                Hi, I'm <span className="gradient-text-emerald">{PERSONAL_INFO.name}</span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-sans leading-[1.08]">
+                R. <span className="gradient-text-blue">Naveen</span>
               </h1>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-300 mt-2 flex items-center gap-3">
-                <span>Data Analyst & BI Specialist</span>
-                <span className="h-2 w-2 rounded-full bg-cyan-400"></span>
+              <h2 className="text-xl sm:text-2xl font-semibold text-slate-300 mt-4 tracking-tight">
+                Transforming Complex Data into <span className="text-white font-bold">Actionable Strategy</span>
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+            <p className="text-base text-slate-300 leading-relaxed max-w-2xl font-normal">
               {PERSONAL_INFO.summary}
             </p>
 
-            {/* Quick Contact & Verified Profile Chips */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            {/* Quick contact tags */}
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-200 bg-dark-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-cyan-500/50 transition-all shadow-sm group"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 bg-obsidian-900/80 hover:bg-obsidian-850 border border-slate-800 hover:border-brand-500/40 hover:text-white transition-all group"
               >
-                <LinkedinIcon className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
-                <span>LinkedIn Profile</span>
-                <ArrowRight className="w-3 h-3 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+                <LinkedinIcon className="w-4 h-4 text-brand-400 group-hover:scale-110 transition-transform" />
+                <span>LinkedIn</span>
               </a>
 
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-200 bg-dark-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-emerald-500/50 transition-all shadow-sm group"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 bg-obsidian-900/80 hover:bg-obsidian-850 border border-slate-800 hover:border-brand-500/40 hover:text-white transition-all group"
               >
-                <GithubIcon className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-                <span>GitHub Repositories</span>
-                <ArrowRight className="w-3 h-3 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+                <GithubIcon className="w-4 h-4 text-brand-400 group-hover:scale-110 transition-transform" />
+                <span>GitHub</span>
               </a>
 
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-200 bg-dark-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-500 transition-all"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 bg-obsidian-900/80 border border-slate-800 hover:border-brand-500/30 transition-all font-mono"
               >
-                <Mail className="w-4 h-4 text-slate-400" />
+                <Mail className="w-3.5 h-3.5 text-brand-400" />
                 <span>{PERSONAL_INFO.email}</span>
               </a>
 
               <a
                 href={`tel:${PERSONAL_INFO.phone}`}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-200 bg-dark-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-500 transition-all"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-300 bg-obsidian-900/80 border border-slate-800 hover:border-brand-500/30 transition-all font-mono"
               >
-                <Phone className="w-4 h-4 text-slate-400" />
+                <Phone className="w-3.5 h-3.5 text-brand-400" />
                 <span>{PERSONAL_INFO.phone}</span>
               </a>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-4 pt-3">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-dark-900 transition-all shadow-lg shadow-emerald-500/25 active:scale-95 group"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-brand-600 via-brand-500 to-brand-600 hover:from-brand-500 hover:to-brand-400 text-white transition-all shadow-lg shadow-brand-500/25 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] active:scale-[0.98] group border border-brand-400/30"
               >
-                <span>Explore BI Dashboards</span>
+                <span>Explore Case Studies</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <a
                 href="#sql-sandbox"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-dark-800 hover:bg-dark-750 text-slate-200 border border-slate-700 hover:border-cyan-500/60 transition-all shadow-md group"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 border border-slate-800 hover:border-brand-500/40 hover:text-white bg-obsidian-900/90 transition-all group hover:bg-obsidian-850"
               >
-                <Database className="w-4 h-4 text-cyan-400" />
-                <span>Interactive SQL Inspector</span>
+                <Database className="w-4 h-4 text-brand-400 group-hover:scale-110 transition-transform" />
+                <span>SQL Simulator</span>
               </a>
 
               <a
                 href={PERSONAL_INFO.resumePath}
                 download="R_Naveen_Data_Analyst_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 bg-dark-900/60 hover:bg-dark-800/60 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-sm text-slate-400 hover:text-brand-300 transition-all"
               >
-                <FileText className="w-4 h-4 text-emerald-400" />
-                <span>Download Resume</span>
+                <FileText className="w-4 h-4" />
+                <span>Resume PDF</span>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Live Data Terminal Card */}
-          <div className="lg:col-span-4">
-            <div className="glass-panel p-6 rounded-2xl border border-slate-800/90 relative group hover:border-emerald-500/40 transition-all">
-              
-              {/* Card Header */}
+          {/* Right: Modern High-Tech Terminal card */}
+          <div className="lg:col-span-5">
+            <div className="supreme-panel p-6 rounded-2xl border border-brand-500/20 relative group hover:border-brand-500/40 shadow-2xl shadow-brand-950/60 transition-all">
+
+              {/* Card header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                    <span className="w-3 h-3 rounded-full bg-red-500/70" />
+                    <span className="w-3 h-3 rounded-full bg-amber-500/70" />
+                    <span className="w-3 h-3 rounded-full bg-emerald-500/70" />
                   </div>
-                  <span className="text-xs font-mono text-slate-400 ml-2">naveen_analytics.sql</span>
+                  <span className="text-xs font-mono text-slate-400 ml-2">analyst_profile.sql</span>
                 </div>
-                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Ready
+                <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+                  READY
                 </span>
               </div>
 
-              {/* Code Snippet Box */}
-              <div className="py-4 space-y-2 text-xs font-mono text-slate-300">
-                <p className="text-slate-500">// Analytical capabilities ready for deployment</p>
-                <p><span className="text-cyan-400">SELECT</span> candidate_name, core_role,</p>
-                <p className="pl-4"><span className="text-emerald-400">status</span>, target_focus</p>
-                <p><span className="text-cyan-400">FROM</span> data_analysts_market</p>
-                <p><span className="text-cyan-400">WHERE</span> skills <span className="text-cyan-400">CONTAINS ALL</span> (</p>
-                <p className="pl-4 text-amber-300">'SQL', 'Python', 'Power BI', 'Excel'</p>
-                <p>) <span className="text-cyan-400">AND</span> verified = <span className="text-emerald-400">TRUE</span>;</p>
+              {/* Code snippet */}
+              <div className="py-4 space-y-1.5 text-xs font-mono text-slate-300">
+                <p className="text-slate-500">-- Executive candidate profile query</p>
+                <p><span className="text-brand-400 font-semibold">SELECT</span> candidate_name, role,</p>
+                <p className="pl-4"><span className="text-ice-400 font-semibold">status</span>, key_competencies</p>
+                <p><span className="text-brand-400 font-semibold">FROM</span> verified_data_analysts</p>
+                <p><span className="text-brand-400 font-semibold">WHERE</span> core_stack <span className="text-brand-400 font-semibold">CONTAINS</span> (</p>
+                <p className="pl-4 text-ice-300">'SQL', 'Python', 'Power BI', 'Excel'</p>
+                <p>) <span className="text-brand-400 font-semibold">AND</span> verified = <span className="text-emerald-400 font-semibold">TRUE</span>;</p>
               </div>
 
-              {/* Verified Result Output */}
-              <div className="mt-2 p-3 rounded-xl bg-dark-900/90 border border-slate-800/80">
-                <div className="flex items-center justify-between text-[11px] text-slate-400 pb-2 border-b border-slate-800">
-                  <span>QUERY EXECUTION</span>
-                  <span className="text-emerald-400 font-mono">0.004 ms</span>
+              {/* Result display */}
+              <div className="mt-2 p-4 rounded-xl bg-obsidian-950/90 border border-slate-800">
+                <div className="flex items-center justify-between text-[11px] text-slate-400 pb-2 border-b border-slate-800/80">
+                  <span className="font-mono text-brand-400 font-semibold">QUERY RESULT</span>
+                  <span className="text-emerald-400 font-mono font-semibold">0.003 ms • OK</span>
                 </div>
-                <div className="pt-2 space-y-1.5 text-xs">
+                <div className="pt-3 space-y-2 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Candidate:</span>
-                    <span className="font-semibold text-white">R. Naveen</span>
+                    <span className="text-slate-400">Candidate</span>
+                    <span className="font-bold text-white">R. Naveen</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Specialization:</span>
-                    <span className="text-cyan-300 font-mono">EDA & BI Reporting</span>
+                    <span className="text-slate-400">Specialization</span>
+                    <span className="text-brand-300 font-mono text-[11px]">EDA & BI Dashboarding</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Degree:</span>
-                    <span className="text-slate-300">BCA (Periyar Univ - 7.1)</span>
+                    <span className="text-slate-400">Education</span>
+                    <span className="text-slate-200">BCA (B.Sc Computer Apps) — 7.1 CGPA</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-400">Decision Value:</span>
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                      <CheckCircle2 className="w-3.5 h-3.5" /> High Actionability
+                    <span className="text-slate-400">Verification</span>
+                    <span className="text-emerald-400 font-medium flex items-center gap-1">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> High Business Impact
                     </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Floating Tool Badges */}
-              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span className="flex items-center gap-1">
-                  <TrendingUp className="w-3.5 h-3.5 text-emerald-400" /> KPI Focused
-                </span>
-                <span className="flex items-center gap-1">
-                  <BarChart2 className="w-3.5 h-3.5 text-cyan-400" /> Interactive BI
-                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Live KPI Metric Cards */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {CORE_KPIS.map((kpi, idx) => (
-            <div 
-              key={idx}
-              className="glass-panel glass-panel-hover p-5 rounded-2xl border border-slate-800"
-            >
-              <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-extrabold font-mono text-white tracking-tight">
-                  {kpi.value}
-                </span>
-                <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  Verified
-                </span>
+        {/* KPI Cards */}
+        <div className="mt-20">
+          <div className="supreme-divider mb-12" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {CORE_KPIS.map((kpi, idx) => (
+              <div
+                key={idx}
+                className="supreme-panel supreme-panel-hover p-6 rounded-2xl border border-slate-800/80 hover:border-brand-500/30"
+              >
+                <div className="flex items-baseline justify-between">
+                  <span className="text-3xl font-extrabold text-white tracking-tight font-sans">
+                    {kpi.value}
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-brand-400/40" />
+                </div>
+                <h3 className="text-sm font-semibold text-slate-200 mt-2 font-sans">
+                  {kpi.label}
+                </h3>
+                <p className="text-xs text-brand-400 font-semibold mt-1">
+                  {kpi.context}
+                </p>
+                <p className="text-[12px] text-slate-400 mt-1 leading-relaxed">
+                  {kpi.subtext}
+                </p>
               </div>
-              <h3 className="text-sm font-semibold text-slate-200 mt-2">
-                {kpi.label}
-              </h3>
-              <p className="text-xs text-cyan-400 font-medium mt-0.5">
-                {kpi.context}
-              </p>
-              <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
-                {kpi.subtext}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>

@@ -8,77 +8,110 @@
 
 @layer base {
   body {
-    @apply bg-dark-900 text-slate-200 font-sans overflow-x-hidden;
+    @apply bg-obsidian-950 text-slate-200 font-sans overflow-x-hidden antialiased;
+  }
+
+  /* Supreme selection styling */
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.35);
+    color: #ffffff;
   }
 }
 
-/* Background Subtle Grid Pattern */
-.bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* ─── Supreme Background Grids & Ambience ─── */
+.bg-grid-supreme {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
 }
 
-.bg-dot-pattern {
+.bg-dot-supreme {
   background-size: 24px 24px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px);
 }
 
-/* Glassmorphism Panels */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.65);
+/* ─── Supreme Glass Panels ─── */
+.supreme-panel {
+  background: rgba(7, 12, 24, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.6),
+    0 8px 24px -8px rgba(0, 0, 0, 0.5);
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.supreme-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-panel-hover:hover {
-  background: rgba(21, 30, 50, 0.8);
-  border-color: rgba(16, 185, 129, 0.25);
-  box-shadow: 0 12px 40px -10px rgba(16, 185, 129, 0.15);
+.supreme-panel-hover:hover {
+  background: rgba(12, 19, 34, 0.85);
+  border-color: rgba(96, 165, 250, 0.32);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 16px 40px -12px rgba(37, 99, 235, 0.22);
   transform: translateY(-2px);
 }
 
-.glass-pill {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* ─── Laser Divider Line ─── */
+.supreme-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(59, 130, 246, 0.15),
+    rgba(56, 189, 248, 0.4),
+    rgba(59, 130, 246, 0.15),
+    transparent
+  );
 }
 
-/* Gradient Texts */
-.gradient-text-emerald {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400;
+/* ─── Gradient Text Utility ─── */
+.gradient-text-supreme {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #93c5fd 100%);
 }
 
 .gradient-text-blue {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400;
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #93c5fd 100%);
 }
 
-.gradient-text-slate {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+.gradient-text-glow {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%);
 }
 
-/* Custom Scrollbar */
+/* ─── Supreme Glow Pill ─── */
+.supreme-pill {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+/* ─── Custom Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #1e2e4f;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #2563eb;
+}
+
+/* ─── Focus States ─── */
+*:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
